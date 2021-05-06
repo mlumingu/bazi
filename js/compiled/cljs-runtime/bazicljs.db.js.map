@@ -1,0 +1,1 @@
+{"version":3,"sources":["bazicljs/db.cljs"],"mappings":";AAEA,AAAA,AAAA,AAAA,AAAKA","names":["bazicljs.db/default-db"],"sourcesContent":["(ns bazicljs.db)\n\n(def default-db\n  {:name \"re-frame\"})\n"]}
