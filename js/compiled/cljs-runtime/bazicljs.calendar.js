@@ -5,12 +5,12 @@ var y = cljs_time.core.year(date);
 var m = cljs_time.core.month(date);
 var d = cljs_time.core.day(date);
 var yy = (y - (1600));
-var fexpr__27910 = (function (){var fexpr__27912 = (function (){var fexpr__27913 = cljs.core.deref(bazicljs.calendar.cal);
-return (fexpr__27913.cljs$core$IFn$_invoke$arity$1 ? fexpr__27913.cljs$core$IFn$_invoke$arity$1(yy) : fexpr__27913.call(null,yy));
+var fexpr__82694 = (function (){var fexpr__82696 = (function (){var fexpr__82697 = cljs.core.deref(bazicljs.calendar.cal);
+return (fexpr__82697.cljs$core$IFn$_invoke$arity$1 ? fexpr__82697.cljs$core$IFn$_invoke$arity$1(yy) : fexpr__82697.call(null,yy));
 })();
-return (fexpr__27912.cljs$core$IFn$_invoke$arity$1 ? fexpr__27912.cljs$core$IFn$_invoke$arity$1(m) : fexpr__27912.call(null,m));
+return (fexpr__82696.cljs$core$IFn$_invoke$arity$1 ? fexpr__82696.cljs$core$IFn$_invoke$arity$1(m) : fexpr__82696.call(null,m));
 })();
-return (fexpr__27910.cljs$core$IFn$_invoke$arity$1 ? fexpr__27910.cljs$core$IFn$_invoke$arity$1(d) : fexpr__27910.call(null,d));
+return (fexpr__82694.cljs$core$IFn$_invoke$arity$1 ? fexpr__82694.cljs$core$IFn$_invoke$arity$1(d) : fexpr__82694.call(null,d));
 });
 bazicljs.calendar.hour_branch = (function bazicljs$calendar$hour_branch(h){
 return cljs.core.rem(Math.ceil((h / (2))),(12));
@@ -33,11 +33,11 @@ bazicljs.calendar.days_to_next_prev_month_1 = (function bazicljs$calendar$days_t
 var delta_pillars = bazicljs.calendar.gregorian_to_solar_ymd(delta_date);
 var delta_ms = (delta_pillars.cljs$core$IFn$_invoke$arity$1 ? delta_pillars.cljs$core$IFn$_invoke$arity$1((2)) : delta_pillars.call(null,(2)));
 if(cljs.core._EQ_.cljs$core$IFn$_invoke$arity$2(ms,delta_ms)){
-var G__27921 = cljs_time.core.plus.cljs$core$IFn$_invoke$arity$2(delta_date,cljs_time.core.days.cljs$core$IFn$_invoke$arity$1(delta));
-var G__27923 = delta;
-var G__27924 = ms;
-var G__27926 = (days_diff + (1));
-return (bazicljs.calendar.days_to_next_prev_month_1.cljs$core$IFn$_invoke$arity$4 ? bazicljs.calendar.days_to_next_prev_month_1.cljs$core$IFn$_invoke$arity$4(G__27921,G__27923,G__27924,G__27926) : bazicljs.calendar.days_to_next_prev_month_1.call(null,G__27921,G__27923,G__27924,G__27926));
+var G__82698 = cljs_time.core.plus.cljs$core$IFn$_invoke$arity$2(delta_date,cljs_time.core.days.cljs$core$IFn$_invoke$arity$1(delta));
+var G__82699 = delta;
+var G__82700 = ms;
+var G__82701 = (days_diff + (1));
+return (bazicljs.calendar.days_to_next_prev_month_1.cljs$core$IFn$_invoke$arity$4 ? bazicljs.calendar.days_to_next_prev_month_1.cljs$core$IFn$_invoke$arity$4(G__82698,G__82699,G__82700,G__82701) : bazicljs.calendar.days_to_next_prev_month_1.call(null,G__82698,G__82699,G__82700,G__82701));
 } else {
 return days_diff;
 }
@@ -80,8 +80,8 @@ return (-1);
 }
 });
 bazicljs.calendar.luck_pillar_start_ages = (function bazicljs$calendar$luck_pillar_start_ages(date,is_male){
-var ys = (function (){var fexpr__27930 = bazicljs.calendar.gregorian_to_solar_ymd(date);
-return (fexpr__27930.cljs$core$IFn$_invoke$arity$1 ? fexpr__27930.cljs$core$IFn$_invoke$arity$1((4)) : fexpr__27930.call(null,(4)));
+var ys = (function (){var fexpr__82702 = bazicljs.calendar.gregorian_to_solar_ymd(date);
+return (fexpr__82702.cljs$core$IFn$_invoke$arity$1 ? fexpr__82702.cljs$core$IFn$_invoke$arity$1((4)) : fexpr__82702.call(null,(4)));
 })();
 var yang_year = cljs.core._EQ_.cljs$core$IFn$_invoke$arity$2(cljs.core.rem(ys,(2)),(0));
 var delta = bazicljs.calendar.luck_pillar_start_delta(is_male,yang_year);
@@ -104,15 +104,47 @@ var d = cljs_time.core.day(date);
 var h = cljs_time.core.hour(date);
 return new cljs.core.PersistentVector(null, 4, 5, cljs.core.PersistentVector.EMPTY_NODE, [h,d,m,y], null);
 });
-bazicljs.calendar.luck_pillars1 = (function bazicljs$calendar$luck_pillars1(date,is_male){
-return cljs.core.map.cljs$core$IFn$_invoke$arity$3(cljs.core.vector,bazicljs.calendar.luck_pillars(date,is_male),bazicljs.calendar.luck_pillar_start_ages(date,is_male));
+bazicljs.calendar.solar_year = (function bazicljs$calendar$solar_year(pillars){
+return new cljs.core.PersistentVector(null, 2, 5, cljs.core.PersistentVector.EMPTY_NODE, [(pillars.cljs$core$IFn$_invoke$arity$1 ? pillars.cljs$core$IFn$_invoke$arity$1((4)) : pillars.call(null,(4))),(pillars.cljs$core$IFn$_invoke$arity$1 ? pillars.cljs$core$IFn$_invoke$arity$1((5)) : pillars.call(null,(5)))], null);
+});
+bazicljs.calendar.solar_month = (function bazicljs$calendar$solar_month(pillars){
+return new cljs.core.PersistentVector(null, 2, 5, cljs.core.PersistentVector.EMPTY_NODE, [(pillars.cljs$core$IFn$_invoke$arity$1 ? pillars.cljs$core$IFn$_invoke$arity$1((2)) : pillars.call(null,(2))),(pillars.cljs$core$IFn$_invoke$arity$1 ? pillars.cljs$core$IFn$_invoke$arity$1((3)) : pillars.call(null,(3)))], null);
+});
+bazicljs.calendar.solar_day = (function bazicljs$calendar$solar_day(pillars){
+return new cljs.core.PersistentVector(null, 2, 5, cljs.core.PersistentVector.EMPTY_NODE, [(pillars.cljs$core$IFn$_invoke$arity$1 ? pillars.cljs$core$IFn$_invoke$arity$1((0)) : pillars.call(null,(0))),(pillars.cljs$core$IFn$_invoke$arity$1 ? pillars.cljs$core$IFn$_invoke$arity$1((1)) : pillars.call(null,(1)))], null);
+});
+bazicljs.calendar.solar_hour = (function bazicljs$calendar$solar_hour(pillars){
+return new cljs.core.PersistentVector(null, 2, 5, cljs.core.PersistentVector.EMPTY_NODE, [(pillars.cljs$core$IFn$_invoke$arity$1 ? pillars.cljs$core$IFn$_invoke$arity$1((0)) : pillars.call(null,(0))),(pillars.cljs$core$IFn$_invoke$arity$1 ? pillars.cljs$core$IFn$_invoke$arity$1((1)) : pillars.call(null,(1)))], null);
+});
+bazicljs.calendar.time_pillars = (function bazicljs$calendar$time_pillars(start,end,pillar_selector){
+return cljs.core.sort_by.cljs$core$IFn$_invoke$arity$3(cljs.core.first,(function (p1__82707_SHARP_,p2__82708_SHARP_){
+return cljs_time.core.before_QMARK_(p1__82707_SHARP_,p2__82708_SHARP_);
+}),cljs.core.map.cljs$core$IFn$_invoke$arity$2((function (p1__82706_SHARP_){
+return (new cljs.core.PersistentVector(null,3,(5),cljs.core.PersistentVector.EMPTY_NODE,[cljs.core.first((p1__82706_SHARP_.cljs$core$IFn$_invoke$arity$1 ? p1__82706_SHARP_.cljs$core$IFn$_invoke$arity$1((1)) : p1__82706_SHARP_.call(null,(1)))),cljs_time.core.plus.cljs$core$IFn$_invoke$arity$2(cljs.core.last((p1__82706_SHARP_.cljs$core$IFn$_invoke$arity$1 ? p1__82706_SHARP_.cljs$core$IFn$_invoke$arity$1((1)) : p1__82706_SHARP_.call(null,(1)))),cljs_time.core.days.cljs$core$IFn$_invoke$arity$1((1))),(p1__82706_SHARP_.cljs$core$IFn$_invoke$arity$1 ? p1__82706_SHARP_.cljs$core$IFn$_invoke$arity$1((0)) : p1__82706_SHARP_.call(null,(0)))],null));
+}),cljs.core.group_by((function (p1__82705_SHARP_){
+var G__82709 = bazicljs.calendar.gregorian_to_solar_ymd(p1__82705_SHARP_);
+return (pillar_selector.cljs$core$IFn$_invoke$arity$1 ? pillar_selector.cljs$core$IFn$_invoke$arity$1(G__82709) : pillar_selector.call(null,G__82709));
+}),cljs.core.take_while.cljs$core$IFn$_invoke$arity$2((function (p1__82704_SHARP_){
+return cljs_time.core.before_QMARK_(p1__82704_SHARP_,end);
+}),cljs.core.map.cljs$core$IFn$_invoke$arity$2((function (p1__82703_SHARP_){
+return cljs_time.core.plus.cljs$core$IFn$_invoke$arity$2(start,cljs_time.core.days.cljs$core$IFn$_invoke$arity$1(p1__82703_SHARP_));
+}),cljs.core.range.cljs$core$IFn$_invoke$arity$0())))));
 });
 bazicljs.calendar.year_pillars = (function bazicljs$calendar$year_pillars(start,end){
-return cljs.core.map.cljs$core$IFn$_invoke$arity$2((function (p1__27934_SHARP_){
-return (new cljs.core.PersistentVector(null,2,(5),cljs.core.PersistentVector.EMPTY_NODE,[(p1__27934_SHARP_.cljs$core$IFn$_invoke$arity$1 ? p1__27934_SHARP_.cljs$core$IFn$_invoke$arity$1((4)) : p1__27934_SHARP_.call(null,(4))),(p1__27934_SHARP_.cljs$core$IFn$_invoke$arity$1 ? p1__27934_SHARP_.cljs$core$IFn$_invoke$arity$1((5)) : p1__27934_SHARP_.call(null,(5)))],null));
-}),cljs.core.map.cljs$core$IFn$_invoke$arity$2(bazicljs.calendar.gregorian_to_solar_ymd,cljs.core.map.cljs$core$IFn$_invoke$arity$2((function (p1__27933_SHARP_){
-return cljs_time.core.date_time.cljs$core$IFn$_invoke$arity$3(p1__27933_SHARP_,(5),(5));
-}),cljs.core.range.cljs$core$IFn$_invoke$arity$2(start,end))));
+return bazicljs.calendar.time_pillars(start,end,bazicljs.calendar.solar_year);
+});
+bazicljs.calendar.month_pillars = (function bazicljs$calendar$month_pillars(start,end){
+return bazicljs.calendar.time_pillars(start,end,bazicljs.calendar.solar_month);
+});
+bazicljs.calendar.day_pillars = (function bazicljs$calendar$day_pillars(start,end){
+return bazicljs.calendar.time_pillars(start,end,bazicljs.calendar.solar_day);
+});
+bazicljs.calendar.hour_pillars = (function bazicljs$calendar$hour_pillars(day){
+return cljs.core.map.cljs$core$IFn$_invoke$arity$2((function (p1__82711_SHARP_){
+return (new cljs.core.PersistentVector(null,2,(5),cljs.core.PersistentVector.EMPTY_NODE,[p1__82711_SHARP_,bazicljs.calendar.solar_hour(bazicljs.calendar.gregorian_to_solar(p1__82711_SHARP_))],null));
+}),cljs.core.map.cljs$core$IFn$_invoke$arity$2((function (p1__82710_SHARP_){
+return cljs_time.core.plus.cljs$core$IFn$_invoke$arity$2(cljs_time.core.at_midnight(day),cljs_time.core.hours.cljs$core$IFn$_invoke$arity$1(p1__82710_SHARP_));
+}),(new cljs.core.List(null,(0),(new cljs.core.List(null,(1),(new cljs.core.List(null,(3),(new cljs.core.List(null,(5),(new cljs.core.List(null,(7),(new cljs.core.List(null,(9),(new cljs.core.List(null,(11),(new cljs.core.List(null,(13),(new cljs.core.List(null,(15),(new cljs.core.List(null,(17),(new cljs.core.List(null,(19),(new cljs.core.List(null,(21),(new cljs.core.List(null,(23),null,(1),null)),(2),null)),(3),null)),(4),null)),(5),null)),(6),null)),(7),null)),(8),null)),(9),null)),(10),null)),(11),null)),(12),null)),(13),null))));
 });
 
 //# sourceMappingURL=bazicljs.calendar.js.map
