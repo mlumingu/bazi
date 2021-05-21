@@ -20,6 +20,9 @@
           background-color: black;
           color: white;
       }
+      .disabled {
+          
+      }
     </style>
   </head>
   <body>
